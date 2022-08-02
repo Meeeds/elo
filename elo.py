@@ -1,19 +1,21 @@
 import random
+#https://github.com/ddm7018/Elo
 from elosports.elo import Elo
 import sys
 import matplotlib.pyplot as plt
 import statistics
 
 
-nb_players = 10000
-base_elo = 1000
-k_factor = 10
-nb_round_robin = 10
+nb_players = 2500
+base_elo = 2000
+k_factor = 32
+nb_round_robin = 20
+#Number of bins in the histogram
 number_of_bins = 20
 
 eloLeague = Elo(k = k_factor , homefield = 0)
 for i in range(nb_players):
-    eloLeague.addPlayer(str(i), rating = 1000)
+    eloLeague.addPlayer(str(i), rating = base_elo)
 
 
 
@@ -30,8 +32,8 @@ for r in range(nb_round_robin):
 
 
 
-for team in eloLeague.ratingDict.keys():
-    print(team, eloLeague.ratingDict[team])
+#for team in eloLeague.ratingDict.keys():
+#    print(team, eloLeague.ratingDict[team])
     
 elo_list=eloLeague.ratingDict.values()
 hist_bins = []
