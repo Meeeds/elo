@@ -31,10 +31,6 @@ for r in range(nb_round_robin):
     print("\tAfter round %d/%d elo ecart_t=%f" % (r+1,nb_round_robin,statistics.stdev((eloLeague.ratingDict.values()))))
 
 
-
-#for team in eloLeague.ratingDict.keys():
-#    print(team, eloLeague.ratingDict[team])
-    
 elo_list=eloLeague.ratingDict.values()
 hist_bins = []
 current = min(elo_list)
